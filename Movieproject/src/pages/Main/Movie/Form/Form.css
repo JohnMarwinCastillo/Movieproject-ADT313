@@ -1,44 +1,16 @@
-/* Form Container */
+.searched-movie {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.search-container p:hover {
+  background-color: lightblue;
+}
+
+.poster-image {
+  width: 150px;
+  height: auto;
+}
+
 .container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-height: 80vh; /* Constrain the height */
-  overflow-y: auto; /* Enable vertical scrolling */
-}
-
-/* Scrollbar Styling */
-.container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.container::-webkit-scrollbar-thumb {
-  background: #007bff;
-  border-radius: 4px;
-}
-
-.container::-webkit-scrollbar-thumb:hover {
-  background: #0056b3;
-}
-
-.container::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Form Header */
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
-  font-weight: bold;
-}
-
-/* Search Section */
-.search-container {
-  display: flex;
-  flex-direction: column;
+  overflow: auto;
 }
