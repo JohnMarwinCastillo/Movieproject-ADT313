@@ -1,0 +1,91 @@
+
+.lists-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.create-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-container button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-container button:hover {
+  background-color: #45a049;
+}
+
+
+.table-container {
+  overflow-x: auto;
+}
+
+.movie-lists {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.movie-lists th,
+.movie-lists td {
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.movie-lists th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.movie-lists tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.movie-lists tr:hover {
+  background-color: #f1f1f1;
+}
+
+
+.movie-lists button {
+  padding: 8px 16px;
+  margin-right: 5px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.movie-lists button:nth-child(1) {
+  background-color: #007bff;
+  color: white;
+}
+
+.movie-lists button:nth-child(1):hover {
+  background-color: #0056b3;
+}
+
+.movie-lists button:nth-child(2) {
+  background-color: #dc3545;
+  color: white;
+}
+
+.movie-lists button:nth-child(2):hover {
+  background-color: #c82333;
+}
