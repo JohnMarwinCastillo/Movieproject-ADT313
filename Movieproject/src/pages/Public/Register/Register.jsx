@@ -34,7 +34,7 @@ function Register() {
 
   const handleShowPassword = useCallback(() => {
     setIsShowPassword((value) => !value);
-  }, [isShowPassword]);
+  }, []);
 
   const handleOnChange = (event, type) => {
     setDebounceState(false);
@@ -131,8 +131,8 @@ function Register() {
         <form>
           <div className='form-container'>
             <div className='register-header'>
-              <h1>Register</h1>
-              
+            <h1>Welcome to <span>NetMovies+</span></h1>
+            <p>NetMovies+ is the streaming home for movies and series from Disney, Marvel, Star Wars, and Star.</p>
             </div>
             <div>
 
@@ -141,7 +141,7 @@ function Register() {
                   <label>First Name:</label>
                   <input type='text' name='firstName' ref={firstNameRef} onChange={(e) => handleOnChange(e, 'firstName')} required/>
                 </div>
-                {debounceState && isFieldsDirty && firstName == '' && (
+                {debounceState && isFieldsDirty && firstName === '' && (
                   <span className='errors'>This field is required</span>
                 )}
               </div>
@@ -151,7 +151,7 @@ function Register() {
                   <label>Middle Name:</label>
                   <input type='text' name='middleName' ref={middleNameRef} onChange={(e) => handleOnChange(e, 'middleName')} required/>
                 </div>
-                {debounceState && isFieldsDirty && middleName == '' && (
+                {debounceState && isFieldsDirty && middleName === '' && (
                   <span className='errors'>This field is required</span>
                 )}
               </div>
@@ -161,7 +161,7 @@ function Register() {
                   <label>Last Name:</label>
                   <input type='text' name='lastName' ref={lastNameRef} onChange={(e) => handleOnChange(e, 'lastName')} required/>
                 </div>
-                {debounceState && isFieldsDirty && lastName == '' && (
+                {debounceState && isFieldsDirty && lastName === '' && (
                   <span className='errors'>This field is required</span>
                 )}
               </div>
@@ -171,7 +171,7 @@ function Register() {
                     <label>Contact Number:</label>
                     <input type='text' name='contactNo' ref={contactNoRef} onChange={(e) => handleOnChange(e, 'contactNo')} required/>
                   </div>
-                  {debounceState && isFieldsDirty && contactNo == '' && (
+                  {debounceState && isFieldsDirty && contactNo === '' && (
                     <span className='errors'>This field is required</span>
                   )}
                 </div>
@@ -181,7 +181,7 @@ function Register() {
                   <label>Email:</label>
                   <input type='text' name='email' ref={emailRef} onChange={(e) => handleOnChange(e, 'email')} required/>
                   </div>
-                  {debounceState && isFieldsDirty && email == '' && (
+                  {debounceState && isFieldsDirty && email === '' && (
                     <span className='errors'>This field is required</span>
                   )}
                 </div>
@@ -193,7 +193,7 @@ function Register() {
                       <span className={`fas ${isShowPassword ? 'fa-eye-slash' : 'fa-eye'}` } id='icon-toggle' onClick={handleShowPassword} />
                     </div>
                   </div>
-                  {debounceState && isFieldsDirty && password == '' && (
+                  {debounceState && isFieldsDirty && password === '' && (
                     <span className='errors'>This field is required</span>
                   )}
                 </div>
@@ -214,11 +214,11 @@ function Register() {
                       });
                     } else {
                       setIsFieldsDirty(true);
-                      if (email == '') {
+                      if (email === '') {
                         emailRef.current.focus();
                       }
 
-                      if (password == '') {
+                      if (password === '') {
                         passwordRef.current.focus();
                       }
                     }
@@ -236,5 +236,9 @@ function Register() {
     </div>
   );
 }
+
+
+
+
 
 export default Register;

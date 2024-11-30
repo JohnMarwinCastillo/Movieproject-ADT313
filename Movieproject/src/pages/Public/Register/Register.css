@@ -1,0 +1,151 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Register page layout */
+  .Register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(19, 19, 19);
+  }
+  
+  .main-container {
+    background: url(register1.jpg);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+  }
+  
+  .register-header h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* Form container */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  /* Form groups */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  input {
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #007bff;
+  }
+  
+  /* Show password toggle */
+  #icon-toggle {
+    position: absolute;
+    right: 12px;
+    top: 38%;
+    font-size: 18px;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  #icon-toggle:hover {
+    color: #007bff;
+  }
+  
+  /* Error messages */
+  .errors {
+    font-size: 13px;
+    color: red;
+    margin-top: 6px;
+  }
+  
+  /* Submit button */
+  .submit-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: max-content;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  /* Register link */
+  .register-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .register-container a {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .register-container a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Alert box styles */
+  .alert-box {
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .alert-box.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  
+  .alert-box.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
