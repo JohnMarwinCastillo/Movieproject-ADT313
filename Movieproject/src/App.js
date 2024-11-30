@@ -3,11 +3,17 @@ import * as ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import Login from './pages/Public/Login/Login';
+import Register from './pages/Public/Register/Register';
 import Dashboard from './pages/Main/Dashboard/Dashboard';
 import Main from './pages/Main/Main';
 import Movie from './pages/Main/Movie/Movie';
 import Lists from './pages/Main/Movie/Lists/Lists';
 import Form from './pages/Main/Movie/Form/Form';
+import CastandCrew from './pages/Main/Movie/Form/CastandCrew/CastandCrew'; // Corrected path
+import Videos from './pages/Main/Movie/Form/Videos/Videos'; // Corrected path
+import Photos from './pages/Main/Movie/Form/Photos/Photos'; // Corrected path
+import { AuthProvider } from './context/context';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const router = createBrowserRouter([
   {
@@ -15,26 +21,44 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    
+    path: '/register',
+    element: <Register />
+  },
+  {
     path: '/main',
     element: <Main />,
     children: [
       //Temporarily disabled the dashboard route
+       //Uncomment if Dashboard is needed
        {
-         path: '/main/dashboard',
+        path: 'dashboard',
          element: <Dashboard />,
        },
       {
-        path: '/main/movies',
+        path: 'movies',
         element: <Movie />,
         children: [
           {
-            path: '/main/movies',
+            path: '', // Default route for "/main/movies"
             element: <Lists />,
           },
           {
-            path: '/main/movies/form/:movieId?',
+            path: 'form/:movieId?',
             element: <Form />,
+            children: [
+              {
+                path: 'castandcrews',
+                element: <CastandCrew />,
+              },
+              {
+                path: 'videos',
+                element: <Videos />,
+              },
+              {
+                path: 'photos',
+                element: <Photos />,
+              },
+            ],
           },
         ],
       },
@@ -44,9 +68,11 @@ const router = createBrowserRouter([
 
 function App() {
   return (
+    <AuthProvider>
     <div className='App'>
       <RouterProvider router={router} />
     </div>
+    </AuthProvider>
   );
 }
 
