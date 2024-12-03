@@ -1,0 +1,143 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: rgb(30, 30, 30);
+  color: white;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  background-color: rgb(45, 45, 45);
+  padding: 15px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* Main Container */
+.cast-box {
+  display: flex;
+  gap: 20px;
+  padding: 25px;
+  flex-wrap: wrap;
+}
+
+/* Cast View & Search Sections */
+.Cast-View-Box,
+.Search-Box {
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  min-width: 300px; /* Ensures a minimum width for smaller screens */
+}
+
+/* Cast View Box */
+.Cast-View-Box {
+  background-color: rgb(55, 55, 55);
+}
+
+/* Card Display Styling */
+.card-display-cast {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: rgb(75, 75, 75);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+.image-casts {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Search Section Styling */
+.search-box-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.input-search-person {
+  flex: 2;
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: rgb(80, 80, 80);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.button-search,
+.save-button,
+.edit-btn,
+.back-btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-search {
+  background-color: hsl(29, 83%, 55%);
+}
+
+.button-search:hover {
+  background-color: hsl(34, 90%, 60%);
+}
+
+.save-button {
+  background-color: hsl(120, 60%, 40%);
+}
+
+.save-button:hover {
+  background-color: hsl(120, 70%, 45%);
+}
+
+.edit-btn {
+  background-color: hsl(214, 83%, 55%);
+}
+
+.edit-btn:hover {
+  background-color: hsl(214, 90%, 60%);
+}
+
+.back-btn {
+  background-color: hsl(0, 0%, 50%);
+}
+
+.back-btn:hover {
+  background-color: hsl(0, 0%, 60%);
+}
+
+/* Footer */
+.footer {
+  background-color: rgb(45, 45, 45);
+  text-align: center;
+  padding: 10px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
