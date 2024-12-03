@@ -8,6 +8,7 @@ body {
   height: 100%;
 }
 
+
 .container {
   overflow: auto;
 
@@ -75,13 +76,26 @@ body {
 }
 
 /* Movie Details Form */
+.movie-form-container{
+  
+background-color: #000000;
+
+}
+
+
 .movie-details {
-  margin-top: 20px;
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color:  black;
 }
 
 .movie-details label {
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-top:  20px;
   display: block;
   font-size: 1.1rem;
 }
@@ -107,10 +121,11 @@ body {
 }
 
 .movie-details .poster-image {
-  width: 200px;
-  height: auto;
-  margin-bottom: 20px;
-  border-radius: 5px;
+  margin-left: 1rem;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.921);
 }
 
 .movie-details button {
@@ -189,6 +204,68 @@ nav li:hover {
   background-color: #3498db;
   color: white;
 }
+.outlet-container {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.outlet-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3498db;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabs li {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #ecf0f1;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  border-right: 1px solid #ddd;
+}
+
+.tabs li:last-child {
+  border-right: none;
+}
+
+.tabs li:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+.tabs li.active {
+  background-color: #3498db;
+  color: white;
+}
+
+.outlet-content {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 200px;
+}
 
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
@@ -219,8 +296,12 @@ nav li:hover {
     flex-direction: column;
     align-items: center;
   }
-
+  
   .tabs li {
     font-size: 1rem;
   }
-}
+
+  .moviecontainer.mt-5 overflow-auto movieform-container{
+
+background-color: #000000;
+}}
