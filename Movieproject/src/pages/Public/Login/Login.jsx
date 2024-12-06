@@ -18,7 +18,7 @@ function Login() {
   const navigate = useNavigate();
 
   // Use useContext to share user token and credentials
-  const { setAuthData, auth } = useContext(AuthContext); // Correct usage of AuthContext
+  const { setAuthData, auth } = useContext(AuthContext);
 
   // Alert-box state
   const [alertMessage, setAlertMessage] = useState('');
@@ -98,11 +98,28 @@ function Login() {
   // Correctly using auth from context
   useEffect(() => {
     console.log('Auth State Updated:', auth);
-  }, [auth]); // Now listening to auth changes
+  }, [auth]);
 
   useEffect(() => {
     setDebounceState(true);
   }, [userInputDebounce]);
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // Prevent form submission reload
+      if (email && password) {
+        handleLogin();
+      } else {
+        setIsFieldsDirty(true);
+        if (email === '') {
+          emailRef.current.focus();
+        }
+        if (password === '') {
+          passwordRef.current.focus();
+        }
+      }
+    }
+  };
 
   return (
     <div className="Login">
@@ -113,10 +130,12 @@ function Login() {
           </div>
         )}
         <div className="background"></div>
-        <form>
+        <form onKeyDown={handleKeyDown}>
           <div className="form-container">
             <div className="login-header">
-              <h1>Welcome to <span>MovieDB</span></h1>
+              <h1>
+                Welcome to <span>MovieDB</span>
+              </h1>
               <p></p>
             </div>
 
@@ -131,7 +150,7 @@ function Login() {
                 />
               </div>
               {debounceState && isFieldsDirty && email === '' && (
-                <span className="errors">this field is required</span>
+                <span className="errors">This field is required</span>
               )}
             </div>
 
@@ -146,14 +165,16 @@ function Login() {
                     onChange={(e) => handleOnChange(e, 'password')}
                   />
                   <span
-                    className={`fas ${isShowPassword ? 'fa-eye-slash' : 'fa-eye'}`}
+                    className={`fas ${
+                      isShowPassword ? 'fa-eye-slash' : 'fa-eye'
+                    }`}
                     id="icon-toggle"
                     onClick={handleShowPassword}
                   />
                 </div>
               </div>
               {debounceState && isFieldsDirty && password === '' && (
-                <span className="errors">this field is required</span>
+                <span className="errors">This field is required</span>
               )}
             </div>
 
@@ -166,7 +187,7 @@ function Login() {
                     return;
                   }
                   if (email && password) {
-                    handleLogin(); // No need to pass object
+                    handleLogin();
                   } else {
                     setIsFieldsDirty(true);
                     if (email === '') {
@@ -178,12 +199,14 @@ function Login() {
                   }
                 }}
               >
-                {status === 'idle' ? 'Login' : 'loading'}
+                {status === 'idle' ? 'Login' : 'Loading'}
               </button>
             </div>
             <div className="register-container">
               <span>
-                <small>Don't have an account? <a href="/register">Register</a></small>
+                <small>
+                  Don't have an account? <a href="/register">Register</a>
+                </small>
               </span>
             </div>
           </div>
