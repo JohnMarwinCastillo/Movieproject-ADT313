@@ -1,0 +1,21 @@
+/* Movie Page Styles */
+.movie-page {
+    background-color: #f0f4f7; /* Light background color for the entire page */
+    padding: 20px;
+  }
+  
+  .movie-header {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3498db;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .movie-content {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  

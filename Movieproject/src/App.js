@@ -9,9 +9,9 @@ import Main from './pages/Main/Main';
 import Movie from './pages/Main/Movie/Movie';
 import Lists from './pages/Main/Movie/Lists/Lists';
 import Form from './pages/Main/Movie/Form/Form';
-import CastandCrew from './pages/Main/Movie/Form/CastandCrew/CastandCrew'; // Corrected path
-import Videos from './pages/Main/Movie/Form/Videos/Videos'; // Corrected path
-import Photos from './pages/Main/Movie/Form/Photos/Photos'; // Corrected path
+import CastandCrew from './pages/Main/Movie/CastandCrew/CastandCrew'; // Corrected path
+import Videos from './pages/Main/Movie/Videos/Videos'; // Corrected path
+import Photos from './pages/Main/Movie/Photos/Photos'; // Corrected path
 import { AuthProvider } from './context/context';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         element: <Movie />,
         children: [
           {
-            path: '', // Default route for "/main/movies"
+            path: '', //Default route for "/main/movies"
             element: <Lists />,
           },
           {
