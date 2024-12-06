@@ -19,14 +19,17 @@ body {
   text-align: center;
   border-radius: 12px;
   margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: hsl(34, 90%, 70%);
 }
 
 /* Main Container */
 .cast-box {
   display: flex;
+  flex-direction: column;
   gap: 20px;
-  padding: 25px;
-  flex-wrap: wrap;
+  padding: 20px;
 }
 
 /* Cast View & Search Sections */
@@ -34,13 +37,14 @@ body {
 .Search-Box {
   border-radius: 12px;
   padding: 20px;
+  background-color: rgb(45, 45, 45);
   flex: 1;
-  min-width: 300px; /* Ensures a minimum width for smaller screens */
+  min-width: 300px;
 }
 
 /* Cast View Box */
 .Cast-View-Box {
-  background-color: rgb(55, 55, 55);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Card Display Styling */
@@ -48,6 +52,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
+  background-color: rgb(12, 11, 9);
 }
 
 .card {
@@ -55,6 +60,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
   text-align: center;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -70,12 +76,23 @@ body {
   border-radius: 12px 12px 0 0;
 }
 
+.container h4 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.container p {
+  font-size: 14px;
+  color: hsl(0, 0%, 80%);
+}
+
 /* Search Section Styling */
 .search-box-btn {
   display: flex;
   align-items: center;
   gap: 15px;
   margin-bottom: 25px;
+  flex-wrap: wrap;
 }
 
 .input-search-person {
@@ -85,7 +102,13 @@ body {
   border-radius: 8px;
   background-color: rgb(80, 80, 80);
   color: white;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-search-person:focus {
+  outline: none;
+  background-color: hsl(0, 0%, 30%);
+  box-shadow: 0 0 5px hsl(34, 90%, 60%);
 }
 
 .button-search,
@@ -98,7 +121,7 @@ body {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button-search {
@@ -107,6 +130,7 @@ body {
 
 .button-search:hover {
   background-color: hsl(34, 90%, 60%);
+  transform: translateY(-2px);
 }
 
 .save-button {
@@ -115,6 +139,7 @@ body {
 
 .save-button:hover {
   background-color: hsl(120, 70%, 45%);
+  transform: translateY(-2px);
 }
 
 .edit-btn {
@@ -123,6 +148,7 @@ body {
 
 .edit-btn:hover {
   background-color: hsl(214, 90%, 60%);
+  transform: translateY(-2px);
 }
 
 .back-btn {
@@ -131,6 +157,61 @@ body {
 
 .back-btn:hover {
   background-color: hsl(0, 0%, 60%);
+  transform: translateY(-2px);
+}
+
+/* Cast Details */
+.cast-detail-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.image-container-center {
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid hsl(34, 90%, 60%);
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-group label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.input-group input {
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: rgb(80, 80, 80);
+  color: white;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  background-color: hsl(0, 0%, 30%);
+  box-shadow: 0 0 5px hsl(34, 90%, 60%);
 }
 
 /* Footer */
@@ -140,4 +221,21 @@ body {
   padding: 10px;
   border-radius: 12px;
   margin-top: 20px;
+  color: hsl(34, 90%, 70%);
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-display-cast {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .input-search-person {
+    width: 100%;
+  }
+
+  .cast-detail-box {
+    gap: 15px;
+  }
 }
