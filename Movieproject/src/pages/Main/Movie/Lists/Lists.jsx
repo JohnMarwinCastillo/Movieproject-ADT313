@@ -87,7 +87,7 @@ const Lists = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </div>  
   );
 };
 

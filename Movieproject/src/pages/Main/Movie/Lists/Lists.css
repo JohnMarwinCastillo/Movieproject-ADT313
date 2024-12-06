@@ -1,11 +1,12 @@
 
 .lists-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #7c6da9;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(240, 237, 237, 0.1);
+  
 }
 
 
@@ -19,7 +20,7 @@
 .create-container button {
   background-color: #4caf50;
   color: white;
-  padding: 10px 20px;
+  width: max-content;;
   font-size: 16px;
   border: none;
   border-radius: 5px;
@@ -39,6 +40,7 @@
 .movie-lists {
   width: 100%;
   border-collapse: collapse;
+  background-color: rgb(71, 68, 68);
 }
 
 .movie-lists th,
@@ -49,12 +51,12 @@
 }
 
 .movie-lists th {
-  background-color: #f2f2f2;
+  background-color: #0b0a09;
   font-weight: bold;
 }
 
 .movie-lists tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #8484c4;
 }
 
 .movie-lists tr:hover {
