@@ -1,39 +1,106 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
 .Main {
   display: flex;
-  overflow: hidden;
-  max-height: 100vh;
-}
-.Main .container {
-  display: flex;
-  width: 100vw;
-}
-.Main .container .outlet {
-  flex-grow: 3;
-  padding: 1rem;
-}
-.Main .container .navigation {
-  background-color: aliceblue;
-  padding-top: 40px;
   height: 100vh;
 }
-.Main .container .navigation ul {
+
+.container {
+  display: flex;
+  flex: 1;
+}
+
+.navigation {
+  width: 250px;
+  background: linear-gradient(135deg, #4e4e4e, #5e9eff);
+  color: white;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  transition: width 0.3s ease;
+}
+
+.navigation:hover {
+  width: 270px;
+}
+
+.navigation ul {
   list-style: none;
-  overflow: hidden;
   padding: 0;
+  width: 100%;
   margin: 0;
 }
 
-.Main .container .navigation ul li {
-  padding: 10px 80px 10px 20px;
-}
-.Main .container .navigation ul li.active,
-.Main .container .navigation ul li:hover {
-  background: #ccc;
-}
-.Main .container .navigation ul li a {
-  text-decoration: none;
+.navigation li {
+  width: 100%;
+  text-align: center;
+  margin: 15px 0;
 }
 
-.Main .container .navigation ul li.logout {
-  cursor: pointer;
+.navigation a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 12px 25px;
+  display: block;
+  transition: background 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  border-radius: 10px;
+}
+
+.navigation a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffdd57;
+  transform: scale(1.1);
+}
+
+.navigation .logout a {
+  background: linear-gradient(135deg, #ff6347, #ff8a65);
+  color: white;
+}
+
+.navigation .logout a:hover {
+  background: linear-gradient(135deg, #e5533c, #ff5f50);
+  color: #ffd7d7;
+}
+
+.outlet {
+  flex: 1;
+  padding: 25px;
+  background: linear-gradient(135deg, #ff0000, #00aeff);
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+  
+}
+
+.outlet:hover {
+  background: linear-gradient(135deg, #004f87, #00aeff);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    width: 90px;
+    align-items: flex-start;
+  }
+
+  .navigation:hover {
+    width: 110px;
+  }
+
+  .navigation a {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  .navigation .logout a {
+    font-size: 14px;
+  }
 }

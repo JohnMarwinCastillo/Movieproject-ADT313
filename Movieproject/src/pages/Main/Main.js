@@ -5,33 +5,33 @@ import './Main.css';
 function Main() {
   const accessToken = localStorage.getItem('accessToken');
   const navigate = useNavigate();
+
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
     navigate('/');
   };
 
   useEffect(() => {
-    if (
-      accessToken === undefined ||
-      accessToken === '' ||
-      accessToken === null
-    ) {
+    if (!accessToken) {
       handleLogout();
     }
-  }, []);
+  }, [accessToken]);
+
   return (
     <div className='Main'>
       <div className='container'>
         <div className='navigation'>
           <ul>
-            { <li>
+            <li>
               <a href='/main/dashboard'>Dashboard</a>
-            </li> }
+            </li>
             <li>
               <a href='/main/movies'>Movies</a>
             </li>
             <li className='logout'>
-              <a onClick={handleLogout}>Logout</a>
+              <a onClick={handleLogout} style={{ cursor: 'pointer' }}>
+                Logout
+              </a>
             </li>
           </ul>
         </div>
