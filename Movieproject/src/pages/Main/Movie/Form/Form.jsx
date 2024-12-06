@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Form.css';
 import { Outlet } from 'react-router-dom';
+import { AuthContext } from '../../../../context/context'; // Corrected import
 
 
 const Form = () => {
+  const { auth } = useContext(AuthContext);
   const [query, setQuery] = useState('');
   const [searchedMovieList, setSearchedMovieList] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(undefined);
@@ -22,7 +24,7 @@ const Form = () => {
   const TMDB_HEADERS = {
     Accept: 'application/json',
     Authorization:
-      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTdiNmUyNGJkNWRkNjhiNmE1ZWFjZjgyNWY3NGY5ZCIsIm5iZiI6MTcyOTI5NzI5Ny4wNzMzNTEsInN1YiI6IjY2MzhlZGM0MmZhZjRkMDEzMGM2NzM3NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ZIX4EF2yAKl6NwhcmhZucxSQi1rJDZiGG80tDd6_9XI',
+      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NDg4ZjliMzBlZTZjYTlmODVkNzNmMDZhMTcxY2FlNyIsIm5iZiI6MTczMjU5NjE4NC4yOTc5OTk5LCJzdWIiOiI2NzQ1NTFkOGRjYmIxNWM4OWE4YjQ5OTMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.JlOUhYgfze6MaoOIqv-sXDywzFDPs7I_lmgD1pT5Ig0',
   };
 
   const generateImageUrl = (path) => {
@@ -82,14 +84,14 @@ const Form = () => {
       if (movieId) {
         await axios.patch(`/movies/${movieId}`, data, {
           headers: {
-            Authorization: `Bearer ${accessToken}`,
+            Authorization: `Bearer ${auth.accessToken}`,
           },
         });
         alert('Movie updated successfully.');
       } else {
         await axios.post('/movies', data, {
           headers: {
-            Authorization: `Bearer ${accessToken}`,
+            Authorization: `Bearer ${auth.accessToken}`,
           },
         });
         alert('Movie created successfully.');
@@ -127,7 +129,7 @@ const Form = () => {
   }, [movieId]);
 
   return (
-    <div className="moviecontainer mt-5 overflow-auto movieform-container">
+    <div className="container1">
       <h1>{movieId ? 'Edit Movie' : 'Create Movie'}</h1>
 
       {error && <p className="text-danger text-center">{error}</p>}

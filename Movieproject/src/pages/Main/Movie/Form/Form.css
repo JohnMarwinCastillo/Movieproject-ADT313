@@ -1,17 +1,15 @@
 /* General Styles */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f0f4f7;
   color: #333;
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
-
 .container {
   overflow: auto;
-
 }
 
 /* Movie Search */
@@ -27,39 +25,39 @@ body {
   padding: 12px 16px;
   font-size: 1rem;
   width: 250px;
-  border-radius: 5px;
+  border-radius: 8px;
   border: 1px solid #ccc;
   box-sizing: border-box;
   transition: all 0.3s ease;
 }
 
 .search-container input:focus {
-  border-color: #3498db;
+  border-color: #007bff;
   outline: none;
 }
 
 .search-container button {
   padding: 10px 18px;
   font-size: 1rem;
-  background-color: #3498db;
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .search-container button:hover {
-  background-color: #2980b9;
+  background-color: #0056b3;
 }
 
 .searched-movie {
   max-height: 200px;
   overflow-y: auto;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 10px;
-  background-color: #fafafa;
+  background-color: #1c1c1c;
   margin-top: 10px;
 }
 
@@ -72,32 +70,33 @@ body {
 }
 
 .searched-movie p:hover {
-  background-color: lightblue;
+  background-color: #3498db;
+  color: white;
 }
 
 /* Movie Details Form */
-.movie-form-container{
-  
-background-color: #000000;
-
+.movie-form-container {
+  background-color: #1e1e1e;
 }
-
 
 .movie-details {
   flex: 1;
   max-width: 50%;
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 20px;
   box-sizing: border-box;
-  background-color:  black;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .movie-details label {
   font-weight: bold;
-  margin-top:  20px;
+  margin-top: 20px;
   display: block;
   font-size: 1.1rem;
+  color: #fff;
 }
 
 .movie-details input,
@@ -105,7 +104,7 @@ background-color: #000000;
   width: 100%;
   padding: 12px;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 8px;
   border: 1px solid #ccc;
   margin-bottom: 15px;
   box-sizing: border-box;
@@ -125,22 +124,22 @@ background-color: #000000;
   max-width: 100%;
   max-height: 100%;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.921);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 
 .movie-details button {
   padding: 12px 24px;
   font-size: 1.1rem;
-  background-color: #3498db;
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .movie-details button:hover {
-  background-color: #2980b9;
+  background-color: #0056b3;
 }
 
 /* Pagination */
@@ -156,7 +155,7 @@ background-color: #000000;
   background-color: #2ecc71;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -179,7 +178,7 @@ nav {
   margin-top: 2rem;
   background-color: #ecf0f1;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 nav ul {
@@ -195,7 +194,7 @@ nav li {
   cursor: pointer;
   font-size: 1rem;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 8px;
   transition: background-color 0.3s ease;
   border: 1px solid #ddd;
 }
@@ -204,6 +203,7 @@ nav li:hover {
   background-color: #3498db;
   color: white;
 }
+
 .outlet-container {
   margin-top: 30px;
   padding: 20px;
@@ -228,7 +228,7 @@ nav li:hover {
   padding: 0;
   margin: 0 0 20px;
   background-color: #f9f9f9;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -301,7 +301,7 @@ nav li:hover {
     font-size: 1rem;
   }
 
-  .moviecontainer.mt-5 overflow-auto movieform-container{
-
-background-color: #000000;
-}}
+  .container1 {
+    
+  }
+}
